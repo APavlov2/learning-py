@@ -1,0 +1,5 @@
+__pycache__
+.env
+.docker/**/*.crt
+.docker/**/*.key
+.docker/**/*.pem

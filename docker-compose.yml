@@ -1,0 +1,56 @@
+version: "3.8"
+
+services:
+  learning-py-app:
+    build:
+        context: ./
+        dockerfile: .docker/Dockerfile
+    restart: unless-stopped
+    container_name: learning-py-app
+    tty: true
+    working_dir: /var/www/html/
+    depends_on:
+      - learning-py-db
+    volumes:
+      - ./:/var/www/html
+
+    networks:
+      - learnpynetwork
+
+  learning-py-db:
+    image: postgres:15-alpine
+    container_name: learning-py-db
+    restart: unless-stopped
+    volumes:
+      - pgsqldata:/var/lib/postgresql/data:rw
+    environment:
+      - "POSTGRES_DB=${DB_DATABASE}"
+      - "POSTGRES_USER=${DB_USERNAME}"
+      - "POSTGRES_PASSWORD=${DB_PASSWORD}"
+    ports:
+      - "5432:5432"
+    networks:
+      - learnpynetwork
+
+  learning-py-nginx:
+    image: nginx:alpine
+    container_name: learning-py-nginx
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "${LOCAL_PORT:-8000}:80"
+      - "${LOCAL_SECURE_PORT:-8443}:443"
+    volumes:
+      - ./.docker/conf/certs/learning-py.com.crt:/etc/ssl/certs/mycert.crt # Usable only for Local Dev
+      - ./.docker/conf/certs/learning-py.com.key:/etc/ssl/private/mycert.key # Usable only for Local Dev
+      - ./.docker/conf/nginx:/etc/nginx/conf.d
+      - ./:/var/www/html
+    networks:
+      - learnpynetwork
+
+networks:
+  learnpynetwork:
+    driver: bridge
+
+volumes:
+  pgsqldata:
