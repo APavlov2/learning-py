@@ -25,6 +25,8 @@ The topics to learn, in no particular order, are:
         - [ ] Migration command/process
     - [x] Add Models
     - [x] Add Repositories
+    - [ ] Add Error handling
+    - [ ] Add Basic Auth
     - [ ] Add other design patterns (Optionals)
 - [ ] Python Basics
     - [x] Lists
