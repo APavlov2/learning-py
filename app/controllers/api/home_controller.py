@@ -1,6 +1,6 @@
 from sanic.response import json
-from app.models.users import User
 from app.repositories.user import UserRepository
+from app.requests.user import User as UserRequest
 
 class HomeController:
     # create addNumbers static method
@@ -15,7 +15,7 @@ class HomeController:
 
     @staticmethod
     async def user_add(request):
-        data = request.json
+        data = UserRequest(**request.json)
         repo = UserRepository()
         user = await repo.addUser(data)
         return json({"user": user.toJSON()})

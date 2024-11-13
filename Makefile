@@ -13,7 +13,7 @@ endif
 .PHONY: build clean coverage createssl key phpunit-copy seed shell start stop terminal test
 
 build:
-> COMPOSE_DOCKER_CLI_BUILD=1 docker compose up -d --force-recreate --build
+> COMPOSE_DOCKER_CLI_BUILD=1 docker compose up --force-recreate --build
 
 clean:
 > docker compose down

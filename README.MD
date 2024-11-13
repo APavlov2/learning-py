@@ -16,7 +16,7 @@ The topics to learn, in no particular order, are:
     - [x] Move handlers in controllers
     - [x] Add middlewares
     - [x] Add POST routes
-    - [x] Load SQLAlchemist:
+    - [x] Add SQLAlchemist:
         - [x] Make a singleton instance
         - [x] Create a config class for the connection
         - [x] Use context to retrieve/instantiate connection
@@ -25,6 +25,11 @@ The topics to learn, in no particular order, are:
         - [ ] Migration command/process
     - [x] Add Models
     - [x] Add Repositories
+    - [ ] Add Pydantic
+        - [ ] [Read Documentation]( https://docs.pydantic.dev/latest/concepts/models/ )
+        - [x] Add models
+        - [x] Add email validation
+        - [ ] Add more models
     - [ ] Add Error handling
     - [ ] Add Basic Auth
     - [ ] Add other design patterns (Optionals)

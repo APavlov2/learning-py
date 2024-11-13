@@ -6,3 +6,5 @@ gunicorn
 python-dotenv
 SQLAlchemy
 asyncpg
+pydantic
+email-validator
