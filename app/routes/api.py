@@ -14,7 +14,12 @@ class APIRoutes():
             '/'
         )
         self._app.add_route(
-            HomeController.tasks_list,
-            '/tasks/list',
+            HomeController.user_list,
+            '/user/list',
             methods=["GET"],
+        )
+        self._app.add_route(
+            HomeController.user_add,
+            '/user/add',
+            methods=["POST"],
         )

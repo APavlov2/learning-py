@@ -14,16 +14,17 @@ The topics to learn, in no particular order, are:
     - [x] Serve static files
     - [x] Move routes in separate file
     - [x] Move handlers in controllers
-    - [ ] Add POST routes
-    - [ ] Load SQLAlchemist:
-        - [ ] Make a singleton instance
-        - [ ] Create a config class for the connection
-        - [ ] Use context to retrive/instantiate connection
+    - [x] Add middlewares
+    - [x] Add POST routes
+    - [x] Load SQLAlchemist:
+        - [x] Make a singleton instance
+        - [x] Create a config class for the connection
+        - [x] Use context to retrieve/instantiate connection
     - [ ] Add migrations:
         - [ ] Migration folder
         - [ ] Migration command/process
-    - [ ] Add Models
-    - [ ] Add Repositories
+    - [x] Add Models
+    - [x] Add Repositories
     - [ ] Add other design patterns (Optionals)
 - [ ] Python Basics
     - [x] Lists
@@ -33,8 +34,11 @@ The topics to learn, in no particular order, are:
     - [ ] Sets
         - [ ] Frozen Sets
     - [ ] Strings
-    - [ ] NoneType
+    - [x] NoneType
     - [ ] Bytes and Bytearrays
-    - [ ] NoneType
-    
+- [ ] Add auth0 implementation (Bonus)
+    - [ ] Configuration
+    - [ ] Setup
+    - [ ] Tenant config and import
+    - [ ] Full login
 
